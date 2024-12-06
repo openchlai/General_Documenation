@@ -1,169 +1,235 @@
+# Comprehensive Git Tutorial
 
-# Git Tutorial for Beginners
+## Table of Contents
+- [Comprehensive Git Tutorial](#comprehensive-git-tutorial)
+  - [Table of Contents](#table-of-contents)
+  - [**1. Install Git**](#1-install-git)
+  - [**2. Set Up Git**](#2-set-up-git)
+    - [Basic Configuration](#basic-configuration)
+    - [Authentication Setup](#authentication-setup)
+  - [**3. Basic Operations**](#3-basic-operations)
+    - [Create Repository](#create-repository)
+    - [First Commit Example](#first-commit-example)
+  - [**4. Working with Changes**](#4-working-with-changes)
+    - [Staging Changes](#staging-changes)
+    - [Committing](#committing)
+  - [**5. Remote Operations**](#5-remote-operations)
+    - [Working with Remotes](#working-with-remotes)
+  - [**6. Branching and Merging**](#6-branching-and-merging)
+    - [Modern Git Flow](#modern-git-flow)
+    - [Branch Management](#branch-management)
+  - [**7. History and Tracking**](#7-history-and-tracking)
+  - [**8. Undoing Changes**](#8-undoing-changes)
+  - [**9. Collaboration**](#9-collaboration)
+  - [**10. Advanced Topics**](#10-advanced-topics)
+  - [**11. Troubleshooting**](#11-troubleshooting)
 
 ## **1. Install Git**
-1. **Windows:** Download the installer from [Git for Windows](https://git-scm.com/).
-2. **Mac:** Use Homebrew: `brew install git`.
-3. **Linux:** Use your package manager:
-   - Ubuntu: `sudo apt-get install git`
-   - Fedora: `sudo dnf install git`
+1. **Windows:** 
+   - Download from [Git for Windows](https://git-scm.com/)
+   - Use Windows Package Manager: `winget install Git.Git`
 
----
+2. **Mac:** 
+   - Use Homebrew: `brew install git`
+   - Download installer from [git-scm.com](https://git-scm.com/)
+
+3. **Linux:** Use package manager:
+   - Ubuntu/Debian: `sudo apt-get install git`
+   - Fedora: `sudo dnf install git`
+   - Arch: `sudo pacman -S git`
 
 ## **2. Set Up Git**
-After installation, configure your Git user settings:
+### Basic Configuration
 ```bash
+# Set your identity
 git config --global user.name "Your Name"
 git config --global user.email "youremail@example.com"
-```
 
-Check your settings:
-```bash
+# Set default editor (optional)
+git config --global core.editor "code --wait"  # For VS Code
+
+# Check settings
 git config --list
 ```
 
----
-
-## **3. Create a Repository**
-A repository (or repo) is a storage space for your project.
-
-### Initialize a Local Repository
-1. Go to your project directory:
-   ```bash
-   cd path/to/your/project
-   ```
-2. Initialize Git in the directory:
-   ```bash
-   git init
-   ```
-
-### Clone an Existing Repository
-Copy a repository from a remote server (e.g., GitHub):
+### Authentication Setup
 ```bash
+# Generate SSH key
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Start SSH agent
+eval "$(ssh-agent -s)"
+
+# Add SSH key to agent
+ssh-add ~/.ssh/id_ed25519
+```
+
+## **3. Basic Operations**
+### Create Repository
+```bash
+# Initialize new repository
+cd your-project
+git init
+
+# Clone existing repository
 git clone https://github.com/username/repository.git
+git clone git@github.com:username/repository.git  # Using SSH
 ```
 
----
-
-## **4. Add and Commit Changes**
-- **Track changes in your project:**  
-  Add files to the staging area:
-  ```bash
-  git add filename.txt
-  ```
-  Or add all files:
-  ```bash
-  git add .
-  ```
-
-- **Commit changes:**  
-  Save a snapshot of the tracked files:
-  ```bash
-  git commit -m "Your commit message"
-  ```
-
----
-
-## **5. View Repository Status**
-To see the current status of your repository:
+### First Commit Example
 ```bash
-git status
+# Create and add content to README
+echo "# My Project" > README.md
+
+# Stage and commit
+git add README.md
+git commit -m "Initial commit: Add README"
 ```
 
----
-
-## **6. Push and Pull Changes**
-- **Push Changes to Remote Repository:**  
-  Send your commits to a remote repository:
-  ```bash
-  git push origin main
-  ```
-
-- **Pull Updates from Remote Repository:**  
-  Download and integrate changes from the remote repository:
-  ```bash
-  git pull origin main
-  ```
-
----
-
-## **7. Branching**
-Branches let you work on different features without affecting the main codebase.
-
-- **Create a New Branch:**
-  ```bash
-  git branch new-feature
-  ```
-
-- **Switch to a Branch:**
-  ```bash
-  git checkout new-feature
-  ```
-
-- **Merge a Branch:**
-  First, switch to the main branch:
-  ```bash
-  git checkout main
-  ```
-  Then, merge:
-  ```bash
-  git merge new-feature
-  ```
-
----
-
-## **8. Check Log History**
-View the history of your commits:
+## **4. Working with Changes**
+### Staging Changes
 ```bash
-git log
+# Stage specific files
+git add filename.txt
+git add folder/
+
+# Stage all changes
+git add .
+
+# Stage parts of files
+git add -p filename.txt
+
+# See what's staged
+git diff --staged
 ```
 
+### Committing
+```bash
+# Standard commit
+git commit -m "Add feature X"
+
+# Commit with description
+git commit -m "Add feature X" -m "Detailed description of the changes..."
+
+# Amend last commit
+git commit --amend
+```
+
+## **5. Remote Operations**
+### Working with Remotes
+```bash
+# Add remote
+git remote add origin https://github.com/username/repo.git
+
+# Push to remote
+git push -u origin main  # First time
+git push                 # Subsequent pushes
+
+# Fetch and merge changes
+git fetch origin
+git pull origin main
+```
+
+## **6. Branching and Merging**
+### Modern Git Flow
+```bash
+# Feature branch workflow
+git checkout -b feature/user-authentication
+git add .
+git commit -m "Add user authentication"
+git push -u origin feature/user-authentication
+
+# Create pull request (on GitHub/GitLab)
+# After review and approval:
+git checkout main
+git pull origin main
+git merge feature/user-authentication
+git push origin main
+```
+
+### Branch Management
+```bash
+# List branches
+git branch -a
+
+# Delete branch
+git branch -d feature/completed
+git push origin --delete feature/completed
+```
+
+## **7. History and Tracking**
+```bash
+# View history
+git log --oneline --graph --decorate
+git log -p filename.txt  # File history
+
+# Show changes
+git show commit-hash
+git blame filename.txt
+```
+
+## **8. Undoing Changes**
+```bash
+# Unstage changes
+git restore --staged filename.txt
+
+# Discard changes
+git restore filename.txt
+
+# Revert commit
+git revert commit-hash
+
+# Reset to previous state
+git reset --hard HEAD~1  # Be careful!
+```
+
+## **9. Collaboration**
+```bash
+# Update fork with upstream
+git remote add upstream https://github.com/original/repo.git
+git fetch upstream
+git merge upstream/main
+
+# Create pull request branch
+git checkout -b fix/issue-123
+```
+
+## **10. Advanced Topics**
+```bash
+# Stashing changes
+git stash push -m "Work in progress"
+git stash list
+git stash pop
+
+# Tagging releases
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+```
+
+## **11. Troubleshooting**
+Common Issues and Solutions:
+- **Merge Conflicts:**
+  ```bash
+  git status  # Identify conflicting files
+  # Resolve conflicts in editor
+  git add resolved-file.txt
+  git commit -m "Resolve merge conflicts"
+  ```
+
+- **Authentication Issues:**
+  ```bash
+  git config --global credential.helper cache  # Cache credentials
+  ```
+
+- **Large File Issues:**
+  ```bash
+  git lfs install  # Install Git LFS
+  git lfs track "*.psd"  # Track large files
+  ```
+
 ---
 
-## **9. Undo Changes**
-- **Unstage a File:**
-  ```bash
-  git reset filename.txt
-  ```
-
-- **Discard Uncommitted Changes:**
-  ```bash
-  git checkout -- filename.txt
-  ```
-
----
-
-## **10. Collaborate**
-- **Clone a Team Repository:**  
-  Work with a shared repository using:
-  ```bash
-  git clone https://repository-url.git
-  ```
-
-- **Work with Remote Repositories:**  
-  Add a remote repository:
-  ```bash
-  git remote add origin https://repository-url.git
-  ```
-
----
-
-## **11. Advanced Tips**
-- **View Differences Before Committing:**
-  ```bash
-  git diff
-  ```
-
-- **Remove Files from Tracking:**
-  ```bash
-  git rm filename.txt
-  ```
-
-- **Show Remote Repositories:**
-  ```bash
-  git remote -v
-  ```
-
----
-
-This guide covers the essential Git commands and workflows for a beginner. Let me know if you'd like examples or a more advanced Git tutorial!
+For visual Git workflows and more advanced topics, check out:
+- [Git Branching Model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [GitHub Flow](https://guides.github.com/introduction/flow/)
+- [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
