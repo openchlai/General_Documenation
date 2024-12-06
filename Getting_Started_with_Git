@@ -1,42 +1,45 @@
+
+
+```
 # Comprehensive Git Tutorial
 
 ## Table of Contents
 - [Comprehensive Git Tutorial](#comprehensive-git-tutorial)
-  - [Table of Contents](#table-of-contents)
-  - [**1. Install Git**](#1-install-git)
-  - [**2. Set Up Git**](#2-set-up-git)
-    - [Basic Configuration](#basic-configuration)
-    - [Authentication Setup](#authentication-setup)
-  - [**3. Basic Operations**](#3-basic-operations)
-    - [Create Repository](#create-repository)
-    - [First Commit Example](#first-commit-example)
-  - [**4. Working with Changes**](#4-working-with-changes)
-    - [Staging Changes](#staging-changes)
-    - [Committing](#committing)
-  - [**5. Remote Operations**](#5-remote-operations)
-    - [Working with Remotes](#working-with-remotes)
-  - [**6. Branching and Merging**](#6-branching-and-merging)
-    - [Modern Git Flow](#modern-git-flow)
-    - [Branch Management](#branch-management)
-  - [**7. History and Tracking**](#7-history-and-tracking)
-  - [**8. Undoing Changes**](#8-undoing-changes)
-  - [**9. Collaboration**](#9-collaboration)
-  - [**10. Advanced Topics**](#10-advanced-topics)
-  - [**11. Troubleshooting**](#11-troubleshooting)
+ - [Table of Contents](#table-of-contents)
+ - [**1. Install Git**](#1-install-git)
+ - [**2. Set Up Git**](#2-set-up-git)
+   - [Basic Configuration](#basic-configuration)
+   - [Authentication Setup](#authentication-setup)
+ - [**3. Basic Operations**](#3-basic-operations)
+   - [Create Repository](#create-repository)
+   - [First Commit Example](#first-commit-example)
+ - [**4. Working with Changes**](#4-working-with-changes)
+   - [Staging Changes](#staging-changes)
+   - [Committing](#committing)
+ - [**5. Remote Operations**](#5-remote-operations)
+   - [Working with Remotes](#working-with-remotes)
+ - [**6. Branching and Merging**](#6-branching-and-merging)
+   - [Modern Git Flow](#modern-git-flow)
+   - [Branch Management](#branch-management)
+ - [**7. History and Tracking**](#7-history-and-tracking)
+ - [**8. Undoing Changes**](#8-undoing-changes)
+ - [**9. Collaboration**](#9-collaboration)
+ - [**10. Advanced Topics**](#10-advanced-topics)
+ - [**11. Troubleshooting**](#11-troubleshooting)
 
 ## **1. Install Git**
-1. **Windows:** 
-   - Download from [Git for Windows](https://git-scm.com/)
-   - Use Windows Package Manager: `winget install Git.Git`
+1. **Windows:**
+  - Download from [Git for Windows](https://git-scm.com/)
+  - Use Windows Package Manager: `winget install Git.Git`
 
-2. **Mac:** 
-   - Use Homebrew: `brew install git`
-   - Download installer from [git-scm.com](https://git-scm.com/)
+2. **Mac:**
+  - Use Homebrew: `brew install git`
+  - Download installer from [git-scm.com](https://git-scm.com/)
 
 3. **Linux:** Use package manager:
-   - Ubuntu/Debian: `sudo apt-get install git`
-   - Fedora: `sudo dnf install git`
-   - Arch: `sudo pacman -S git`
+  - Ubuntu/Debian: `sudo apt-get install git`
+  - Fedora: `sudo dnf install git`
+  - Arch: `sudo pacman -S git`
 
 ## **2. Set Up Git**
 ### Basic Configuration
@@ -209,23 +212,23 @@ git push origin v1.0.0
 ## **11. Troubleshooting**
 Common Issues and Solutions:
 - **Merge Conflicts:**
-  ```bash
-  git status  # Identify conflicting files
-  # Resolve conflicts in editor
-  git add resolved-file.txt
-  git commit -m "Resolve merge conflicts"
-  ```
+ ```bash
+ git status  # Identify conflicting files
+ # Resolve conflicts in editor
+ git add resolved-file.txt
+ git commit -m "Resolve merge conflicts"
+ ```
 
 - **Authentication Issues:**
-  ```bash
-  git config --global credential.helper cache  # Cache credentials
-  ```
+ ```bash
+ git config --global credential.helper cache  # Cache credentials
+ ```
 
 - **Large File Issues:**
-  ```bash
-  git lfs install  # Install Git LFS
-  git lfs track "*.psd"  # Track large files
-  ```
+ ```bash
+ git lfs install  # Install Git LFS
+ git lfs track "*.psd"  # Track large files
+ ```
 
 ---
 
