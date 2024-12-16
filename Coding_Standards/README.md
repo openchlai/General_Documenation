@@ -35,6 +35,8 @@ This document outlines the coding standards and best practices required for proj
 - Design for cross-platform compatibility and accessibility.
 - Also check [UNICEF's Coding Best Practices](./Coding_Best_Practices.md)
 
+- Also check [UNICEF's Coding Best Practices with PHP](./Coding_Best_Practices_with_PHP.md)
+
 ---
 
 ## ✅ Quality Assurance
