@@ -13,6 +13,75 @@ Consistent coding styles improve code readability and make collaboration easier.
 - Adhere to the [PHP Standards Recommendations (PSRs)](https://www.php-fig.org/psr/) developed by the PHP Framework Interop Group.
   - **PSR-1**: Basic coding standards.
   - **PSR-12**: Extended coding style guide.
+- **PSR-2**: Coding style guide.
+# PSR-12 Coding Style Guide Summary
+
+## 1. Files
+- **Encoding**: All PHP files must use `UTF-8` without BOM.
+- **Line endings**: Use LF (`\n`) for line endings.
+- **Indentation**: Use 4 spaces for indentation, not tabs.
+- **Line length**: Limit lines to 120 characters; soft limit at 80 for readability.
+- **Closing tag**: Omit the closing `?>` tag for files containing only PHP.
+
+---
+
+## 2. Namespaces and Imports
+- Place one blank line after the `namespace` declaration and before any `use` declarations.
+- Group `use` statements together, one per line.
+- Alphabetically order `use` statements.
+
+---
+
+## 3. Classes, Traits, and Interfaces
+- Open curly braces for classes go on the **next line**.
+- Use a blank line between class-level declarations (properties, methods).
+- **Visibility** must be explicitly declared for all properties and methods (`public`, `protected`, `private`).
+
+---
+
+## 4. Methods and Functions
+- Method and function names must be in **camelCase**.
+- Open curly braces for functions go on the **same line** as the function declaration.
+- Arguments must be separated by a single space after commas.
+- Default values for arguments must not have spaces around the equals sign.
+
+---
+
+## 5. Control Structures
+- Control keywords (e.g., `if`, `for`, `while`) must have **one space** after them.
+- The opening curly brace for control structures must be on the **same line** as the control keyword.
+- Avoid unnecessary parentheses for `return`, `include`, etc.
+
+---
+
+## 6. Operators
+- Binary and ternary operators should have a space on **both sides** (e.g., `$a = $b + $c`).
+- No spaces around unary operators (e.g., `++$i`, `$j--`).
+
+---
+
+## 7. Arrays
+- Use the `[]` syntax for arrays.
+- Multiline arrays should have each element on its own line with a **trailing comma**.
+
+---
+
+## 8. Constants
+- Constants declared with `define` should be in **uppercase letters** with underscores (e.g., `MY_CONSTANT`).
+
+---
+
+## 9. PHP DocBlocks
+- Use PHPDoc for documenting classes, methods, and functions.
+- Align tags vertically for readability.
+
+---
+
+## 10. Miscellaneous
+- No **trailing whitespace** at the end of lines.
+- Blank lines may be added to improve readability but avoid multiple consecutive blank lines.
+- Use **meaningful names** for variables, classes, and methods.
+
   - **PSR-4**: Autoloading standards.
 - Use tools like `PHP_CodeSniffer` or `PHP-CS-Fixer` to automate style checking and formatting.
 
