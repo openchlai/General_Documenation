@@ -1,6 +1,38 @@
+# Git Version Control Guidelines
 
-#### `README.md` (Main Entry Point)
-```md
+## Purpose
+This directory provides comprehensive documentation and guidelines for Git version control practices, ensuring consistent and efficient collaboration across the development team.
+
+## Contents
+- Git setup instructions
+- Workflow guidelines
+- Branch naming conventions
+- Commit message standards
+- Code review procedures
+- Conflict resolution guides
+- Best practices documentation
+
+## Guidelines
+1. **Repository Setup**
+- Follow standard Git initialization procedures
+- Configure appropriate .gitignore
+- Set up branch protection rules
+- Document repository structure
+
+2. **Workflow**
+- Use feature branch workflow
+- Follow pull request procedures
+- Maintain clean commit history
+- Regular synchronization with main branch
+
+3. **Standards**
+- Clear commit message format
+- Branch naming conventions
+- Code review requirements
+- Merge/rebase guidelines
+
+---
+
 # Comprehensive Git Tutorial
 
 This tutorial covers all the essential and advanced concepts of Git. Each section is provided as a separate file for easy navigation.
