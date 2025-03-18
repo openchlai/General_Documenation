@@ -2,7 +2,7 @@
 
 ## Project Name: OpenCHS System
 **Version:** 1.0  
-**Date:** [18th March 2025]
+**Date:** 18th March 2025
 
 ## 1. Introduction
 ### 1.1 Overview
@@ -27,12 +27,14 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 #### 2.2.1 Helpline Managers
 - Oversee helpline teams and service delivery.
 - Need **efficient call management, staff coordination**, and **data-driven insights**.
-- Struggle with **high call volumes and inconsistent service levels**.
+- Struggle with **high call volumes, duplicate case entries, and system access limitations**.
+- **Some calls do not ring but still enter the queue**, causing response delays.
+- **Recovery options for cases are limited**, making documentation difficult.
 
 #### 2.2.2 Local Governments & NGOs
 - Coordinate service providers and advocate for policy improvements.
 - Need **efficient inter-agency collaboration** and **real-time reporting tools**.
-- Struggle with **bureaucratic delays and fragmented data systems**.
+- Struggle with **bureaucratic delays, fragmented data systems, and inconsistent geographic classification (district vs. sub-county)**.
 
 #### 2.2.3 Children in Distress
 - Need **safe and easy-to-use communication channels**.
@@ -41,7 +43,7 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 #### 2.2.4 Case Managers
 - Coordinate complex cases and ensure survivors receive assistance.
 - Need **real-time case tracking and seamless agency coordination**.
-- Struggle with **bureaucratic delays and resource limitations**.
+- Struggle with **bureaucratic delays, overlapping calls, and difficulty updating case locations**.
 
 #### 2.2.5 Healthcare Providers
 - Deliver medical and psychological care to survivors.
@@ -51,7 +53,7 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 #### 2.2.6 Case Workers
 - Provide direct survivor support and referrals.
 - Need **structured intake forms and crisis intervention tools**.
-- Struggle with **high caseloads and limited shelter capacity**.
+- Struggle with **high caseloads, difficulty managing call queues, and poor case documentation workflows**.
 
 #### 2.2.7 Survivors of GBV
 - Require **confidential communication and secure access to resources**.
@@ -65,17 +67,17 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 #### 2.2.9 Social Workers & Helpline Operators
 - Handle distress calls and manage referrals.
 - Need **case tracking tools and trauma-informed care training**.
-- Struggle with **high call volumes and operational inefficiencies**.
+- Struggle with **high call volumes, calls staying in queue without assignment, and sound/visualization issues for incoming calls**.
 
 #### 2.2.10 Admin Users
 - Manage system security, permissions, and compliance.
 - Need **intuitive admin interfaces and automated monitoring tools**.
-- Struggle with **complex setup procedures and regulatory compliance**.
+- Struggle with **complex setup procedures, lack of call metrics tracking, and inadequate real-time queue monitoring**.
 
 #### 2.2.11 Helpline Supervisors
 - Monitor call center operations and staff performance.
 - Need **real-time analytics dashboards and workload balancing tools**.
-- Struggle with **slow inter-agency communication and staff burnout**.
+- Struggle with **slow inter-agency communication, staff burnout, and missing wallboard statistics for queue monitoring**.
 
 ## 3. Information Architecture
 ### 3.1 Sitemap
@@ -110,7 +112,7 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 - **Contrast Compliance:** Meets WCAG AA standards.
 
 ### 5.3 Typography
-- **Font:** Open Sans font.
+- **Font:** Open Sans.
 - **Size & Weight:** Headings (Bold, 24px), Body (Regular, 16px).
 
 ### 5.4 Iconography
@@ -143,26 +145,13 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 - **Accessibility testing with assistive technologies.**
 - **Performance stress testing on multiple devices.**
 
-### 8.2 Iteration & Improvement
-- **Regular updates based on usability data.**
-- **Define success metrics (e.g., task completion rates).**
-- **Refinement through feedback loops with end-users.**
-- **Long-term monitoring of feature adoption rates.**
-
 ## 9. Development Handoff
-### 9.1 Documentation & Assets
-- **Design repository:** Stored within the system’s internal documentation.
+- **Design repository:** Internal documentation.
 - **Style guides & UI components:** Accessible via the design system.
-- **API Documentation:** Clear guidelines for system integrations.
-
-### 9.2 Communication & Collaboration
-- **Feedback Loops:** Continuous validation with stakeholders.
 
 ## 10. Conclusion & Next Steps
 - Finalize high-fidelity prototypes.
 - Conduct usability testing.
 - Implement iterative improvements based on feedback.
-- Ensure compliance with security and accessibility standards.
-- Expand automation and AI-powered recommendations.
 
 This document will continue to evolve based on the customer and user feedback.
