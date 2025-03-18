@@ -110,7 +110,7 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 - **Contrast Compliance:** Meets WCAG AA standards.
 
 ### 5.3 Typography
-- **Font:** Open Sans.
+- **Font:** Open Sans font.
 - **Size & Weight:** Headings (Bold, 24px), Body (Regular, 16px).
 
 ### 5.4 Iconography
@@ -165,4 +165,4 @@ This document defines the UI/UX requirements and design guidelines for the OpenC
 - Ensure compliance with security and accessibility standards.
 - Expand automation and AI-powered recommendations.
 
-This document will continue to evolve based on real-world usage and stakeholder feedback.
+This document will continue to evolve based on the customer and user feedback.
