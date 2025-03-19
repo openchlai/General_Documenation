@@ -15,7 +15,7 @@
 
 # Visual Design Assets
 
-This directory serves as the central repository for all visual design assets used across the project, ensuring consistent visual representation and branding.
+This directory serves/will serve as the central repository for all visual design assets used across the project, ensuring consistent visual representation and branding.
 
 ## Purpose
 
